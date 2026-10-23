@@ -1,0 +1,39 @@
+name: "权利问题与撤回"
+description: "报告具体素材的权利疑问、申请暂停使用或撤回"
+title: "[权利问题] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        此入口用于权利疑问与撤回讨论，不要求你是原投稿者，也不要求声明有权投稿。
+        私有仓库阶段，仅有仓库访问权限的人可以填写；没有访问权限时，请通过维护者既有的公开联系渠道联系，不要为提交表单而公开敏感材料。本项目不在此虚构邮箱或另设未经确认的联系方式。
+        请勿提交身份证、住址、手机号、私密合同、令牌或第三方隐私。只描述必要事实；可公开核验的来源或脱敏证据可选填。
+        维护者收到后核实情况，必要时暂停新使用；提交表单不代表投诉已确认，也不承诺立即删除全部 Git 历史或已分发副本。
+  - type: textarea
+    id: affected-material
+    attributes:
+      label: "涉及的素材或投稿位置"
+      description: "填写仓库相对路径、Issue/PR 编号或具体页面位置；多件素材请逐项列出。"
+      placeholder: "episodes/ep01/references/deepseek/文件名.png；关联 Issue #编号"
+    validations:
+      required: true
+  - type: textarea
+    id: concern-description
+    attributes:
+      label: "问题说明"
+      description: "说明具体疑问、你知道的事实及与该素材的关系（如作者、原投稿者、代理人或发现问题的读者）；无需公开真实姓名或证件。"
+      placeholder: "涉及什么权利或授权范围？现有记录哪里不准确或需要核实？"
+    validations:
+      required: true
+  - type: textarea
+    id: requested-resolution
+    attributes:
+      label: "希望采取的处理方式"
+      description: "例如暂停新的使用、补充署名、纠正来源、调整授权范围、移除素材或讨论撤回；最终处理仍需核实。"
+    validations:
+      required: true
+  - type: textarea
+    id: public-evidence
+    attributes:
+      label: "可选：公开来源或脱敏证据摘要"
+      description: "可提供公开原作链接、公开许可文本或不含敏感信息的证据摘要；没有适合公开的材料可以留空，不上传私密原件。"
