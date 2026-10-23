@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+# Keep submitted source lyrics byte-identical to the source manifest.
+*.txt -text
