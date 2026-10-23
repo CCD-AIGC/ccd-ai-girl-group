@@ -1,0 +1,83 @@
+name: "新练习生图片参考"
+description: "提交一个候选角色的静态图片、设定与授权说明"
+title: "[练习生] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先阅读仓库 CONTRIBUTING.md 与 docs/trainee-reference-spec.md。
+        仅接收 1–6 张静态 PNG/JPEG/WebP，每张 ≤10 MiB、合计 ≤40 MiB，单边 ≤8192 像素且总像素 ≤3200 万（项目约定）。不收脚本、压缩包、参考视频或未授权抽帧。
+        请先确认仓库可见范围；无权在该范围展示的内容不要上传。提交后为待审，不代表入选或获准商用。
+  - type: input
+    id: creator-credit
+    attributes:
+      label: "公开署名与角色名称"
+      description: "仅填公开昵称/署名和候选角色名，不填真实证件或私密联系资料。"
+      placeholder: "署名：海风；角色：潮汐 / tide-v1"
+    validations:
+      required: true
+  - type: textarea
+    id: character-profile
+    attributes:
+      label: "角色设定与团队定位"
+      description: "必填辨识特征、性格、技能、坏毛病，以及与现有成员的互补关系。"
+      placeholder: |
+        不可变视觉特征：
+        性格与行为例子：
+        技能与团队定位：
+        坏毛病/弱点：
+        可变设计与补充说明：
+    validations:
+      required: true
+  - type: textarea
+    id: reference-images
+    attributes:
+      label: "静态图片与文件清单"
+      description: "可在此附图；逐张写文件名、视角/用途、版本与尺寸/大小。不要提交外部执行或下载指令。"
+      placeholder: "reference-01.png — 正面全身 — v1 — 1024×1536 — 2 MiB；在此附图"
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: "作者、来源与第三方参考"
+      description: "写本人创作部分、第三方作者/公开来源与授权摘要。没有第三方输入写无。证据必须去除私密信息。"
+      placeholder: |
+        原作者与本人创作部分：
+        第三方图片/IP/字体或真人肖像等输入：
+        可公开核验的来源与授权摘要：
+    validations:
+      required: true
+  - type: textarea
+    id: ai-disclosure
+    attributes:
+      label: "实际 AI 工具与人工修改"
+      description: "列工具/模型/版本、生成与人工修改范围及相关条款；未知写未知，未用写未使用。角色名称不等于模型调用。"
+    validations:
+      required: true
+  - type: textarea
+    id: permission-scope
+    attributes:
+      label: "逐项用途授权与限制"
+      description: "每项填允许/不允许/需另议/不适用；未写明视为未授权。可以只允许评审，不强制同意商业用途。"
+      placeholder: |
+        当前仓库范围展示与评审：
+        纳入仓库/再分发原图：
+        改编/生成衍生内容：
+        成片/社交平台发布：
+        商业使用/平台收益：
+        训练/微调：
+        署名方式、期限、其他限制：
+    validations:
+      required: true
+  - type: checkboxes
+    id: submission-checks
+    attributes:
+      label: "投稿前确认"
+      options:
+        - label: "我已核对来源并有权在当前仓库可见范围展示本次材料；没有上传隐私、未授权真人或第三方参考视频/抽帧。"
+          required: true
+        - label: "材料仅含规定静态图和文字，没有脚本、程序、工作流、模型权重、压缩包或执行指令。"
+          required: true
+        - label: "我理解本次状态为待审，提交不等于入选、已有人审或已授予商业/商标许可；用途以逐项授权和后续审核为准。"
+          required: true

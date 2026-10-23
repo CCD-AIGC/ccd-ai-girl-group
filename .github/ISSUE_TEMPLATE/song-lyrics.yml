@@ -1,0 +1,84 @@
+name: "新歌歌词投稿"
+description: "提交一首原创或有授权的新歌歌词与制作需求"
+title: "[歌词] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先阅读仓库 CONTRIBUTING.md 与 docs/lyrics-spec.md。
+        一次一首主稿，最多一份备选版；纯文本或 UTF-8 TXT/MD，每份 ≤100 KiB、≤5000 字符（项目约定）。不要上传参考歌曲、参考视频、压缩包或未授权第三方歌词全文。
+        先确认仓库可见范围；不能在该范围展示的内容请勿粘贴或上传。提交后为待审，不等于将被谱曲、制作或发布。
+  - type: input
+    id: song-credit
+    attributes:
+      label: "工作歌名、版本与公开署名"
+      description: "共同创作请列作者与分工；不填写身份证、手机号或私密联系方式。"
+      placeholder: "歌名：一束光；版本：v1；署名：海风（词）"
+    validations:
+      required: true
+  - type: textarea
+    id: song-brief
+    attributes:
+      label: "主题、曲风与目标时长"
+      description: "写清故事/情绪、语言、风格、人声或角色分工、目标时长、短样/完整曲与用途。"
+      placeholder: |
+        主题与叙述视角：
+        曲风/情绪/语言：
+        人声或成员分工（可选 BPM）：
+        目标时长与用途：
+        本稿是短样片段还是完整歌词：
+    validations:
+      required: true
+  - type: textarea
+    id: lyrics-content
+    attributes:
+      label: "分段歌词正文"
+      description: "一行一句，使用 Verse/Chorus/Bridge 等段落标签；粘贴正文或附 UTF-8 TXT。备选版另标名称。"
+      placeholder: |
+        [Verse 1]
+        （原创歌词）
+
+        [Chorus]
+        （原创歌词）
+    validations:
+      required: true
+  - type: textarea
+    id: lyric-provenance
+    attributes:
+      label: "创作来源与第三方授权"
+      description: "列原创部分、共同作者、引用/翻译/改编来源与授权证据摘要；无第三方部分写无。不公开敏感证件或私密合同字段。"
+    validations:
+      required: true
+  - type: textarea
+    id: lyric-ai
+    attributes:
+      label: "实际使用的 AI 与人工修改"
+      description: "工具/模型/版本、AI 参与范围、人工改写及相关条款；未用写未使用，未知写未知，不虚构模型参与。"
+    validations:
+      required: true
+  - type: textarea
+    id: lyric-permissions
+    attributes:
+      label: "逐项用途许可、署名与限制"
+      description: "每项填允许/不允许/需另议/不适用；未写明视为未授权。允许评审不等于允许商用。"
+      placeholder: |
+        当前仓库范围展示与评审：
+        纳入仓库/再分发歌词原文：
+        改词/配曲/AI 音乐生成：
+        视频/社交平台发布：
+        商业使用/平台收益：
+        训练/微调：
+        署名、期限、其他限制：
+    validations:
+      required: true
+  - type: checkboxes
+    id: lyric-checks
+    attributes:
+      label: "提交前核对"
+      options:
+        - label: "我已核对作者和来源，并有权在当前仓库可见范围展示本次歌词；未提交无授权的第三方歌词、音视频或个人隐私。"
+          required: true
+        - label: "本次仅提交规定的文字，不包含脚本、宏、压缩包、工作流或执行指令。"
+          required: true
+        - label: "我理解投稿为待审，未自动入选或获得人工审核；配曲、成片发布与商业用途须分别确认，不默认附加统一开源许可。"
+          required: true
